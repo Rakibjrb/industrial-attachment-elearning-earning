@@ -156,7 +156,205 @@
 
     <main>
         <!-- hero section -->
-        <section></section>
+        <section id="hero-section" class="relative overflow-hidden bg-section-bg py-16 lg:py-24">
+            <!-- decorative background glows -->
+            <div class="pointer-events-none absolute -top-24 -left-24 w-96 h-96 rounded-full bg-secondary/10 blur-3xl">
+            </div>
+            <div
+                class="pointer-events-none absolute -bottom-24 -right-24 w-96 h-96 rounded-full bg-emerald-100/40 blur-3xl">
+            </div>
+
+            <div class="max-w-screen-xl mx-auto px-4 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+
+                    <!-- Left Column: Copy & CTAs -->
+                    <div class="lg:col-span-7 flex flex-col items-start">
+                        <!-- Pill Badge -->
+                        <div
+                            class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-pink-100/70 border border-pink-200/60 mb-6">
+                            <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                            <span class="text-xs font-bold text-primary tracking-wide">100% GOTS Certified Organic
+                                Newborn Care</span>
+                        </div>
+
+                        <!-- Main Heading -->
+                        <h1
+                            class="text-4xl sm:text-5xl lg:text-[54px] font-extrabold text-slate-900 leading-[1.15] tracking-tight mb-6">
+                            Gentle as a Mother’s <br class="hidden sm:inline" />Touch, <br />
+                            <span class="text-primary font-black">Pure for Your Newborn.</span>
+                        </h1>
+
+                        <!-- Description -->
+                        <p class="text-base sm:text-lg text-slate-600 max-w-xl leading-relaxed mb-8 font-medium">
+                            Thoughtfully crafted organic baby clothes, breathable bamboo swaddles, and hypoallergenic
+                            botanicals engineered to protect sensitive infant skin from day one.
+                        </p>
+
+                        <!-- CTA Buttons -->
+                        <div class="flex flex-wrap items-center gap-4 mb-12 w-full sm:w-auto">
+                            <a href="#"
+                                class="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-2xl bg-gradient-to-r from-primary to-secondary text-white font-bold shadow-md shadow-pink-400/25 hover:opacity-95 hover:shadow-lg transition-all duration-300">
+                                <i class="fa-solid fa-bag-shopping"></i>
+                                <span>Shop Newborn Essentials</span>
+                            </a>
+                            <a href="#"
+                                class="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-2xl bg-white border border-pink-200/80 text-slate-800 font-bold hover:bg-pink-50/50 hover:border-pink-300 transition-all duration-300 shadow-sm">
+                                <i class="fa-solid fa-box-open text-primary"></i>
+                                <span>Starter Gift Bundles</span>
+                            </a>
+                        </div>
+
+                        <!-- Trust / Feature Indicators -->
+                        <div
+                            class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-pink-100/80 w-full max-w-xl">
+                            <!-- Feature 1 -->
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 border border-emerald-100">
+                                    <i class="fa-solid fa-check text-sm font-bold"></i>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="text-xs font-extrabold text-slate-800 uppercase tracking-tight">Derm
+                                        Tested</span>
+                                    <span class="text-xs text-slate-500 font-semibold">0% harsh chemicals</span>
+                                </div>
+                            </div>
+
+                            <!-- Feature 2 -->
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="w-9 h-9 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center shrink-0 border border-sky-100">
+                                    <i class="fa-solid fa-cloud text-sm"></i>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="text-xs font-extrabold text-slate-800 uppercase tracking-tight">Cloud
+                                        Soft</span>
+                                    <span class="text-xs text-slate-500 font-semibold">Organic bamboo</span>
+                                </div>
+                            </div>
+
+                            <!-- Feature 3 -->
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="w-9 h-9 rounded-xl bg-amber-50 text-amber-500 flex items-center justify-center shrink-0 border border-amber-100">
+                                    <i class="fa-solid fa-star text-sm"></i>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="text-xs font-extrabold text-slate-800 uppercase tracking-tight">50k+
+                                        Mothers</span>
+                                    <span class="text-xs text-slate-500 font-semibold">5-star baby rating</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Visual Showcase Card & Floating Badges -->
+                    <div class="lg:col-span-5 flex justify-center lg:justify-end relative">
+                        <!-- Outer decorative frame / glow -->
+                        <div class="relative w-full max-w-sm sm:max-w-md">
+
+                            <!-- Floating Top Badge: Pediatric Grade -->
+                            <div
+                                class="animate-[bounce_3s_infinite] absolute -top-6 -left-4 sm:-left-8 z-20 bg-white/95 backdrop-blur-md rounded-2xl py-2.5 px-4 shadow-xl border border-pink-100 flex items-center gap-3">
+                                <div
+                                    class="w-8 h-8 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center">
+                                    <i class="fa-solid fa-leaf text-base"></i>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span
+                                        class="text-xs font-extrabold text-slate-800 uppercase tracking-wider">Pediatric
+                                        Grade</span>
+                                    <span class="text-[11px] font-semibold text-slate-500">100% Hypoallergenic</span>
+                                </div>
+                            </div>
+
+                            <!-- Main Product Card Frame -->
+                            <div
+                                class="p-4 sm:p-5 rounded-[36px] bg-gradient-to-b from-pink-200/60 via-pink-100/40 to-pink-200/50 shadow-2xl">
+                                <div
+                                    class="bg-white rounded-[28px] p-6 sm:p-8 flex flex-col items-center shadow-inner relative overflow-hidden">
+
+                                    <!-- Card Header: Tag & Rating -->
+                                    <div class="w-full flex items-center justify-between mb-8">
+                                        <span
+                                            class="px-2.5 py-1 rounded-md bg-pink-100/70 text-primary text-[11px] font-extrabold tracking-wider uppercase">
+                                            Newborn 0-6M
+                                        </span>
+                                        <div class="flex items-center gap-1.5 text-xs font-bold text-slate-600">
+                                            <div class="flex text-amber-400 gap-0.5 text-[10px]">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <span>4.9</span>
+                                            <span class="text-slate-400 font-semibold">(2.4k)</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Product Illustration / Avatar Circle -->
+                                    <div
+                                        class="w-32 h-32 sm:w-36 sm:h-36 rounded-full bg-pink-50/90 flex items-center justify-center my-2 shadow-inner border border-pink-100/50">
+                                        <div class="text-6xl sm:text-7xl">
+                                            👶
+                                        </div>
+                                    </div>
+
+                                    <!-- Product Title & Subtitle -->
+                                    <div class="text-center mt-5 mb-8">
+                                        <h3 class="text-lg sm:text-xl font-bold text-slate-800">
+                                            Piwva Cloud-Sleep Cocoon™
+                                        </h3>
+                                        <p class="text-xs sm:text-sm text-slate-400 font-medium mt-1">
+                                            Thermoregulating organic swaddle
+                                        </p>
+                                    </div>
+
+                                    <!-- Price & Add Button Box -->
+                                    <div
+                                        class="w-full bg-pink-50/60 rounded-2xl p-3 sm:p-4 flex items-center justify-between border border-pink-100/60">
+                                        <div class="flex flex-col">
+                                            <span
+                                                class="text-[11px] font-bold text-slate-400 uppercase tracking-tight">Starter
+                                                Special</span>
+                                            <div class="flex items-baseline gap-1.5">
+                                                <span class="text-xl font-extrabold text-primary">$28.00</span>
+                                                <span
+                                                    class="text-xs text-slate-400 line-through font-semibold">$36.00</span>
+                                            </div>
+                                        </div>
+                                        <button
+                                            class="bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-white font-bold text-xs sm:text-sm px-4 sm:px-5 py-2.5 rounded-xl shadow-sm transition-all duration-200 cursor-pointer">
+                                            Add to Box +
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- Floating Bottom Badge: Colic Calming Fit -->
+                            <div
+                                class="animate-[bounce_3s_infinite] absolute -bottom-5 right-2 sm:-right-4 z-20 bg-white/95 backdrop-blur-md rounded-2xl py-2.5 px-4 shadow-xl border border-pink-100 flex items-center gap-3">
+                                <div
+                                    class="w-8 h-8 rounded-xl bg-pink-50 text-primary flex items-center justify-center">
+                                    <i class="fa-solid fa-shield-heart text-base"></i>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="text-xs font-extrabold text-slate-800">Colic Calming Fit</span>
+                                    <span class="text-[11px] font-semibold text-slate-500">Dampens startle reflex</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- four items section -->
+        <section id="four-items"></section>
     </main>
 
     <footer></footer>
