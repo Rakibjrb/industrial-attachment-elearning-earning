@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number Guessing Game</title>
+    <!-- Tailwind CSS v4 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        /* Custom number input spin button removal */
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type="number"] {
+            -moz-appearance: textfield;
+            appearance: textfield;
+        }
+    </style>
+</head>
+
+<body
+    class="min-h-screen bg-slate-950 text-slate-100 flex items-center justify-center p-4 relative overflow-hidden select-none">
+
+    <!-- Ambient glowing background effects -->
+    <div class="absolute top-1/4 -left-20 w-80 h-80 bg-indigo-600/20 rounded-full blur-[110px] pointer-events-none">
+    </div>
+    <div class="absolute bottom-1/4 -right-20 w-80 h-80 bg-violet-600/20 rounded-full blur-[110px] pointer-events-none">
+    </div>
+    <div class="absolute top-3/4 left-1/3 w-64 h-64 bg-cyan-500/15 rounded-full blur-[100px] pointer-events-none"></div>
+
+    <main class="w-full max-w-md relative z-10">
+        <!-- Main Card with glassmorphism -->
+        <div
+            class="relative rounded-3xl bg-slate-900/70 border border-slate-700/60 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.7)] backdrop-blur-2xl p-7 sm:p-8 overflow-hidden transition-all duration-300">
+
+            <!-- Top Gradient Accent Bar -->
+            <div class="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-cyan-400 via-indigo-500 to-pink-500"></div>
+
+            <!-- Header Section -->
+            <header class="text-center mb-7">
+                <div
+                    class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-400/20 text-indigo-300 text-xs font-semibold uppercase tracking-wider mb-3">
+                    <span class="inline-block w-2 h-2 rounded-full bg-indigo-400 animate-pulse"></span>
+                    Interactive Challenge
+                </div>
+                <h1
+                    class="text-2xl sm:text-3xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-slate-400">
+                    Number Guess
+                </h1>
+                <p class="text-sm text-slate-400 mt-1.5 font-medium">
+                    Can you guess my secret number between <span class="font-bold text-cyan-400">1</span> and <span
+                        class="font-bold text-cyan-400">10</span>?
+                </p>
+            </header>
+
+            <!-- Input & Guess Controls -->
+            <div class="space-y-4">
+                <div class="relative">
+                    <label for="guess-input"
+                        class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">
+                        Your Guess
+                    </label>
+                    <div class="relative flex items-center">
+                        <input type="number" id="guess-input" min="1" max="10"
+                            class="w-full h-14 px-5 pr-14 text-xl font-bold bg-slate-800/80 border border-slate-700/80 rounded-2xl text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/20 transition-all duration-200"
+                            placeholder="e.g. 7">
+                        <span
+                            class="absolute right-4 text-xs font-bold text-slate-500 uppercase tracking-widest pointer-events-none">
+                            1–10
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Feedback / Result Status Banner -->
+                <div id="result-message"
+                    class="min-h-[50px] flex items-center justify-center text-center px-4 py-3 rounded-2xl border border-dashed border-slate-700/80 bg-slate-800/40 text-sm font-medium transition-all duration-200">
+                    Enter a number and tap Guess to begin!
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="grid grid-cols-2 gap-3 pt-1">
+                    <button id="btn-guess"
+                        class="h-12 flex items-center justify-center font-semibold text-sm rounded-xl text-white bg-gradient-to-r from-indigo-500 to-cyan-500 hover:from-indigo-600 hover:to-cyan-600 active:scale-[0.98] shadow-lg shadow-indigo-500/25 transition-all duration-200 cursor-pointer">
+                        Guess
+                    </button>
+                    <button id="btn-reset"
+                        class="h-12 flex items-center justify-center font-semibold text-sm rounded-xl text-slate-300 bg-slate-800 hover:bg-slate-700/90 hover:text-white active:scale-[0.98] border border-slate-700/80 transition-all duration-200 cursor-pointer">
+                        Reset
+                    </button>
+                </div>
+            </div>
+
+            <!-- Footer Stats: Attempts Tracker -->
+            <footer
+                class="mt-6 pt-5 border-t border-slate-800/80 flex items-center justify-center text-xs text-slate-400 font-medium">
+                <div
+                    class="flex items-center gap-1.5 bg-slate-800/80 border border-slate-700/70 px-3 py-1.5 rounded-xl">
+                    <span class="text-slate-400">Total Attempts Remaining:</span>
+                    <span id="attempts-count" class="font-bold text-cyan-400 text-sm">0</span>
+                </div>
+            </footer>
+        </div>
+    </main>
+
+    <!-- main game logic -->
+    <script>
+        const guessInput = document.getElementById("guess-input");
+        const resultMessage = document.getElementById("result-message");
+        const btnGuess = document.getElementById("btn-guess");
+        const btnReset = document.getElementById("btn-reset");
+        const attemptsCount = document.getElementById("attempts-count");
+
+        let secretNumber;
+        let attemptsLeft;
+
+        function initializeGame() {
+            secretNumber = Math.floor(Math.random() * 10) + 1;
+            console.log(secretNumber);
+
+            attemptsLeft = 5;
+            attemptsCount.textContent = attemptsLeft;
+            resultMessage.classList.remove("border-emerald-500", "bg-emerald-500/10", "text-emerald-500", "border-rose-500", "bg-rose-500/10", "text-rose-500");
+            resultMessage.classList.add("text-slate-400");
+            resultMessage.textContent = "Enter a number between 1 and 10";
+            guessInput.value = "";
+            guessInput.disabled = false;
+            btnGuess.disabled = false;
+        }
+
+        // Function to end the game
+        function endGame(isWinner) {
+            guessInput.disabled = true;
+            btnGuess.disabled = true;
+            if (isWinner) {
+                resultMessage.textContent = '';
+                resultMessage.classList.remove("text-slate-400", "border-rose-500", "bg-rose-500/10", "border-amber-500", "bg-amber-500/10", "border-dashed", "border-slate-700/80", "bg-slate-800/40");
+                resultMessage.classList.add("border-emerald-500", "bg-emerald-500/10", "text-emerald-500");
+                resultMessage.textContent = `You got it! The number was ${secretNumber}`;
+            } else {
+                resultMessage.textContent = '';
+                resultMessage.classList.remove("text-slate-400", "border-emerald-500", "bg-emerald-500/10", "border-amber-500", "bg-amber-500/10", "border-dashed", "border-slate-700/80", "bg-slate-800/40");
+                resultMessage.classList.add("border-rose-500", "bg-rose-500/10", "text-rose-500");
+                resultMessage.textContent = `Out of attempts! The number was ${secretNumber}`;
+            }
+        }
+
+        // Handle guess logic
+        function handleGuess() {
+            const userGuess = Number(guessInput.value);
+
+            // 1. Input Validation
+            if (userGuess < 1 || userGuess > 10 || isNaN(userGuess)) {
+                resultMessage.textContent = "⚠️ Please enter a valid number between 1 and 10.";
+                return;
+            };
+
+            attemptsLeft -= 1;
+
+            attemptsCount.textContent = '';
+            attemptsCount.textContent = attemptsLeft;
+
+            if (attemptsLeft == 0) {
+                endGame(false);
+                return;
+            }
+
+            if (userGuess < secretNumber) {
+                resultMessage.textContent = "Try high number!";
+            } else if (userGuess > secretNumber) {
+                resultMessage.textContent = "Try low number!";
+            } else {
+                endGame(true);
+            }
+
+
+        }
+
+        // handle guess
+        btnGuess.addEventListener("click", handleGuess);
+
+        // Handle reset
+        btnReset.addEventListener("click", initializeGame);
+
+
+        // Initialize the game on page load
+        initializeGame();
+    </script>
+
+</body>
+
+</html>
