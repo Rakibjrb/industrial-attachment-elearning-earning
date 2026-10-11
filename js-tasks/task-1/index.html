@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Card UI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(circle at 15% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 85% 80%, rgba(236, 72, 153, 0.15) 0%, transparent 40%),
+                linear-gradient(135deg, #0b0f19 0%, #111827 50%, #0d121f 100%);
+            color: #f3f4f6;
+            padding: 1.5rem;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 420px;
+            background: rgba(23, 28, 44, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5),
+                0 0 0 1px rgba(255, 255, 255, 0.05),
+                inset 0 1px 1px rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 2.25rem 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.75rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899);
+        }
+
+        .card-header {
+            text-align: center;
+        }
+
+        .card-header h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .card-header p {
+            font-size: 0.875rem;
+            color: #94a3b8;
+            margin-top: 0.25rem;
+        }
+
+        /* Flex container for the 2 number inputs */
+        .inputs-group {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .input-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .input-label {
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #94a3b8;
+        }
+
+        .input-field {
+            width: 100%;
+            height: 48px;
+            padding: 0 1rem;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #f8fafc;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            outline: none;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .input-field:focus {
+            border-color: #6366f1;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
+            background: rgba(15, 23, 42, 0.85);
+        }
+
+        .input-field::placeholder {
+            color: #475569;
+        }
+
+        /* Remove arrows/spinners on number input */
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type="number"] {
+            -moz-appearance: textfield;
+            appearance: textfield;
+        }
+
+        /* 4 Buttons grid */
+        .buttons-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.75rem;
+        }
+
+        .btn-op {
+            height: 52px;
+            font-family: inherit;
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            background: linear-gradient(180deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.9) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        }
+
+        .btn-op:hover {
+            background: linear-gradient(180deg, rgba(51, 65, 85, 0.9) 0%, rgba(30, 41, 59, 0.9) 100%);
+            border-color: rgba(99, 102, 241, 0.4);
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px -3px rgba(99, 102, 241, 0.2),
+                0 4px 6px -2px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-op:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Output Field Container */
+        .output-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .output-label {
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #94a3b8;
+        }
+
+        .output-field {
+            width: 100%;
+            min-height: 54px;
+            padding: 0 1.25rem;
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px dashed rgba(99, 102, 241, 0.35);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: #f1f5f9;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .output-value {
+            font-size: 1.25rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            color: #38bdf8;
+        }
+
+        .output-badge {
+            font-size: 0.725rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding: 0.2rem 0.55rem;
+            border-radius: 6px;
+            background: rgba(56, 189, 248, 0.12);
+            color: #38bdf8;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="card" id="calculator-card">
+        <div class="card-header">
+            <h1>Calculator</h1>
+            <p>Perform basic math calculations</p>
+        </div>
+
+        <!-- 2 Number Fields with Flex -->
+        <div class="inputs-group">
+            <div class="input-wrapper">
+                <label for="num1" class="input-label">Number 1</label>
+                <input type="number" id="num1" class="input-field number-input" placeholder="Enter number">
+            </div>
+            <div class="input-wrapper">
+                <label for="num2" class="input-label">Number 2</label>
+                <input type="number" id="num2" class="input-field number-input" placeholder="Enter number">
+            </div>
+        </div>
+
+        <!-- 4 Operator Buttons -->
+        <div class="buttons-grid">
+            <button type="button" class="btn-op" id="btn-add" value="+">+</button>
+            <button type="button" class="btn-op" id="btn-sub" value="-">-</button>
+            <button type="button" class="btn-op" id="btn-mul" value="*">*</button>
+            <button type="button" class="btn-op" id="btn-div" value="/">/</button>
+        </div>
+
+        <!-- Output Field -->
+        <div class="output-container">
+            <span class="output-label">Result</span>
+            <div class="output-field" id="output-field">
+                <span class="output-value" id="output-value">0</span>
+                <span class="output-badge">Output</span>
+            </div>
+        </div>
+    </main>
+
+    <!-- calculation logic -->
+    <script>
+        // DOM Elements
+        const numInput = document.querySelectorAll(".number-input");
+        const btnAdd = document.getElementById("btn-add");
+        const btnSub = document.getElementById("btn-sub");
+        const btnMul = document.getElementById("btn-mul");
+        const btnDiv = document.getElementById("btn-div");
+        const outputValue = document.getElementById("output-value");
+
+        // Function to perform calculation
+        function calculate(operation) {
+            // Convert input values to numbers (float)
+            const num1 = parseFloat(numInput[0].value) || 0;
+            const num2 = parseFloat(numInput[1].value) || 0;
+
+            let result = 0;
+
+            // Perform operation based on the button clicked
+            switch (operation) {
+                case '+':
+                    result = num1 + num2;
+                    break;
+                case '-':
+                    result = num1 - num2;
+                    break;
+                case '*':
+                    result = num1 * num2;
+                    break;
+                case '/':
+                    // Handle division by zero
+                    if (num2 === 0) {
+                        outputValue.textContent = "Error: Division by zero";
+                        outputValue.style.color = "#f87171";
+                        return;
+                    }
+                    result = num1 / num2;
+                    break;
+            }
+
+            // Display the result
+            outputValue.textContent = result;
+            outputValue.style.color = "#38bdf8"; // Reset to blue
+        }
+
+        // Event Listeners for buttons
+        btnAdd.addEventListener("click", () => calculate("+"));
+        btnSub.addEventListener("click", () => calculate("-"));
+        btnMul.addEventListener("click", () => calculate("*"));
+        btnDiv.addEventListener("click", () => calculate("/"));
+
+        // console.log("Script loaded successfully!");
+    </script>
+
+</body>
+
+</html>
