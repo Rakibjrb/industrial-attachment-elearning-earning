@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexcent Landing Page</title>
+
+    <!-- google font cdn -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Quicksand:wght@300..700&display=swap"
+        rel="stylesheet">
+
+    <!-- fontawesome cdn  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
+        integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- tailwindcss cdn  -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- custom tailwindcss color config for the project -->
+    <style type="text/tailwindcss">
+        @theme {
+        /* Nexcent Primary */
+        --color-primary: #4CAF4F;
+
+        /* Nexcent Section Background */
+        --color-bg-silver: #F5F7FA;
+        }   
+    </style>
+
+    <!-- custom internal css -->
+    <style>
+        body {
+            font-family: "Inter", "Sans";
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50">
+    <!-- header nav menu -->
+    <header class="sticky top-0 z-50">
+        <nav class="w-full bg-silver lg:shadow-sm relative">
+            <div class="max-w-screen-xl mx-auto px-4 xl:px-0">
+                <!-- navigation bar -->
+                <div class="flex items-center justify-between h-[84px]">
+                    <!-- logo -->
+                    <a href="#" class="cursor-pointer">
+                        <img class="w-[154.49px] h-6" src="./assets/images/Logo.png" alt="logo">
+                    </a>
+
+                    <!-- desktop navigations -->
+                    <ul class="hidden lg:flex items-center gap-8 text-sm text-[16px]">
+                        <li class="hover:text-primary transition-colors duration-300 cursor-pointer">
+                            <a href="#home">Home</a>
+                        </li>
+                        <li class="hover:text-primary transition-colors duration-300 cursor-pointer">
+                            <a href="#services">Service</a>
+                        </li>
+                        <li class="hover:text-primary transition-colors duration-300 cursor-pointer">
+                            <a href="#features">Feature</a>
+                        </li>
+                        <li class="hover:text-primary transition-colors duration-300 cursor-pointer">
+                            <a href="#products">Products</a>
+                        </li>
+                        <li class="hover:text-primary transition-colors duration-300 cursor-pointer">
+                            <a href="#testimonials">Testimonials</a>
+                        </li>
+                    </ul>
+
+                    <!-- mobile navigations -->
+                    <ul
+                        class="mobile-nav-menu hidden absolute z-10 bg-silver w-full top-full left-0 lg:hidden flex-col items-left gap-8 p-4 text-[16px]">
+                        <li class="hover:text-primary transition-colors duration-300 cursor-pointer">
+                            <a href="#home">Home</a>
+                        </li>
+                        <li class="hover:text-primary transition-colors duration-300 cursor-pointer">
+                            <a href="#services">Service</a>
+                        </li>
+                        <li class="hover:text-primary transition-colors duration-300 cursor-pointer">
+                            <a href="#features">Feature</a>
+                        </li>
+                        <li class="hover:text-primary transition-colors duration-300 cursor-pointer">
+                            <a href="#products">Products</a>
+                        </li>
+                        <li class="hover:text-primary transition-colors duration-300 cursor-pointer">
+                            <a href="#testimonials">Testimonials</a>
+                        </li>
+
+                        <div class="flex lg:hidden items-center gap-6">
+                            <button
+                                class="flex-1 cursor-pointer text-primary hover:text-black transition-all duration-300">Login</button>
+                            <button
+                                class="flex-1 cursor-pointer w-[91px] h-[40px] bg-primary rounded-md text-white hover:text-black transition-all duration-300">Sign
+                                Up</button>
+                        </div>
+                    </ul>
+
+
+                    <div class="hidden lg:flex items-center gap-6">
+                        <button
+                            class="cursor-pointer text-primary hover:text-black transition-all duration-300">Login</button>
+                        <button
+                            class="cursor-pointer w-[91px] h-[40px] bg-primary rounded-md text-white hover:text-black transition-all duration-300">Sign
+                            Up</button>
+                    </div>
+
+                    <!-- mobile menu btn -->
+                    <button class="mobile-nav-button lg:hidden text-xl cursor-pointer">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <script>
+        const mobileNavButton = document.querySelector(".mobile-nav-button");
+        const mobileNavMenu = document.querySelector(".mobile-nav-menu");
+
+        mobileNavButton.addEventListener("click", () => {
+            // check hidden class exist
+            if (mobileNavMenu.classList.contains("hidden")) {
+                mobileNavMenu.classList.remove("hidden");
+                mobileNavMenu.classList.add("flex");
+
+                mobileNavButton.innerHTML = '';
+                mobileNavButton.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+            } else {
+                mobileNavMenu.classList.add("hidden");
+                mobileNavMenu.classList.remove("flex");
+
+                mobileNavButton.innerHTML = '';
+                mobileNavButton.innerHTML = '<i class="fa-solid fa-bars"></i>';
+            }
+        });
+    </script>
+</body>
+
+</html>
