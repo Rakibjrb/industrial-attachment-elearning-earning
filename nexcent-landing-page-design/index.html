@@ -132,7 +132,7 @@
                 <!-- hero slider -->
                 <div class="w-full flex flex-col lg:flex-row gap-[50px] justify-between items-center">
                     <!-- slider content -->
-                    <div class="flex flex-col gap-7 items-center lg:items-start">
+                    <div class="slider-container flex flex-col gap-7 items-center lg:items-start">
                         <h1 class="text-center lg:text-left text-5xl md:text-[64px] font-semibold leading-[76px]"> <span
                                 class="text-text-neutral">Lessons
                                 and
@@ -150,11 +150,11 @@
                     </div>
                 </div>
             </div>
-            <!-- slider-pagination -->
-            <div class="w-full flex justify-center items-center gap-2 -mt-8">
-                <div class="cursor-pointer w-3 h-3 rounded-full bg-primary"></div>
-                <div class="cursor-pointer w-3 h-3 rounded-full bg-primary/40"></div>
-                <div class="cursor-pointer w-3 h-3 rounded-full bg-primary/40"></div>
+            <!-- slider-pagination-btns -->
+            <div class="slider-controllers w-full flex justify-center items-center gap-2 -mt-8">
+                <div class="slider-pagination-btn cursor-pointer w-3 h-3 rounded-full bg-primary"></div>
+                <div class="slider-pagination-btn cursor-pointer w-3 h-3 rounded-full bg-primary/40"></div>
+                <div class="slider-pagination-btn cursor-pointer w-3 h-3 rounded-full bg-primary/40"></div>
             </div>
         </section>
 
@@ -166,15 +166,7 @@
                     clients
                 </p>
                 <!-- icons -->
-                <div class="flex justify-between mt-3 flex-wrap">
-                    <img src="./assets/icons/Logo.png" alt="client-logo" />
-                    <img src="./assets/icons/Logo (1).png" alt="client-logo" />
-                    <img src="./assets/icons/Logo (2).png" alt="client-logo" />
-                    <img src="./assets/icons/Logo (3).png" alt="client-logo" />
-                    <img src="./assets/icons/Logo (4).png" alt="client-logo" />
-                    <img src="./assets/icons/Logo (5).png" alt="client-logo" />
-                    <img src="./assets/icons/Logo (6).png" alt="client-logo" />
-                </div>
+                <div class="clients-logo-container flex justify-between mt-3 flex-wrap"></div>
             </div>
         </section>
 
@@ -192,54 +184,7 @@
                 </div>
 
                 <!-- community cards -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
-                    <div
-                        class="bg-white rounded-lg shadow-sm border border-black/5 hover:shadow-md transition-shadow duration-300 p-6 sm:p-8 flex flex-col items-center text-center">
-                        <div class="relative w-16 h-16 flex items-center justify-center mb-4">
-                            <div class="absolute inset-0 bg-[#E8F5E9] rounded-tl-2xl rounded-br-2xl">
-                            </div>
-                            <img class="relative z-10 w-9 h-9" src="./assets/icons/Icon.png" alt="icon" />
-                        </div>
-                        <h3 class="text-2xl font-bold text-text-neutral mb-3 leading-snug">
-                            Membership<br class="hidden sm:inline">Organisations
-                        </h3>
-                        <p class="text-text-neutral-gray text-sm leading-relaxed max-w-[250px]">
-                            Our membership management software provides full automation of membership renewals and
-                            payments
-                        </p>
-                    </div>
-                    <div
-                        class="bg-white rounded-lg shadow-sm border border-black/5 hover:shadow-md transition-shadow duration-300 p-6 sm:p-8 flex flex-col items-center text-center">
-                        <div class="relative w-16 h-16 flex items-center justify-center mb-4">
-                            <div class="absolute inset-0 bg-[#E8F5E9] rounded-tl-2xl rounded-br-2xl">
-                            </div>
-                            <img class="relative z-10 w-9 h-9" src="./assets/icons/Icon (1).png" alt="icon" />
-                        </div>
-                        <h3 class="text-2xl font-bold text-text-neutral mb-3 leading-snug">
-                            Membership<br class="hidden sm:inline">Organisations
-                        </h3>
-                        <p class="text-text-neutral-gray text-sm leading-relaxed max-w-[250px]">
-                            Our membership management software provides full automation of membership renewals and
-                            payments
-                        </p>
-                    </div>
-                    <div
-                        class="bg-white rounded-lg shadow-sm border border-black/5 hover:shadow-md transition-shadow duration-300 p-6 sm:p-8 flex flex-col items-center text-center">
-                        <div class="relative w-16 h-16 flex items-center justify-center mb-4">
-                            <div class="absolute inset-0 bg-[#E8F5E9] rounded-tl-2xl rounded-br-2xl">
-                            </div>
-                            <img class="relative z-10 w-9 h-9" src="./assets/icons/Icon (2).png" alt="icon" />
-                        </div>
-                        <h3 class="text-2xl font-bold text-text-neutral mb-3 leading-snug">
-                            Membership<br class="hidden sm:inline">Organisations
-                        </h3>
-                        <p class="text-text-neutral-gray text-sm leading-relaxed max-w-[250px]">
-                            Our membership management software provides full automation of membership renewals and
-                            payments
-                        </p>
-                    </div>
-
-                </div>
+                <div class="community-cards-container grid grid-cols-1 md:grid-cols-3 gap-8 mt-10"></div>
             </div>
         </section>
 
@@ -441,73 +386,7 @@
                 </div>
 
                 <!-- blog cards grid -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 mb-10">
-                    <!-- card 1 -->
-                    <div class="relative flex flex-col items-center">
-                        <!-- background image -->
-                        <div class="w-full h-[286px] overflow-hidden rounded-lg">
-                            <img class="w-full h-full object-cover rounded-lg hover:scale-105 transition-transform duration-500"
-                                src="./assets/images/image 18.png"
-                                alt="Creating Streamlined Safeguarding Processes with OneRen" />
-                        </div>
-                        <!-- floating card overlay -->
-                        <div
-                            class="w-[88%] -mt-24 z-10 bg-bg-silver p-5 rounded-lg shadow-lg text-center flex flex-col items-center justify-between min-h-[168px]">
-                            <h3 class="text-lg md:text-xl font-semibold text-text-neutral-gray leading-snug">
-                                Creating Streamlined Safeguarding Processes with OneRen
-                            </h3>
-                            <a href="#"
-                                class="inline-flex items-center gap-2 text-primary font-semibold text-base mt-4 hover:text-[#3d9140] transition-colors duration-300">
-                                <span>Readmore</span>
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- card 2 -->
-                    <div class="relative flex flex-col items-center">
-                        <!-- background image -->
-                        <div class="w-full h-[286px] overflow-hidden rounded-lg">
-                            <img class="w-full h-full object-cover rounded-lg hover:scale-105 transition-transform duration-500"
-                                src="./assets/images/image 19.png"
-                                alt="What are your safeguarding responsibilities and how can you manage them?" />
-                        </div>
-                        <!-- floating card overlay -->
-                        <div
-                            class="w-[88%] -mt-24 z-10 bg-bg-silver p-5 rounded-lg shadow-lg text-center flex flex-col items-center justify-between min-h-[168px]">
-                            <h3 class="text-lg md:text-xl font-semibold text-text-neutral-gray leading-snug">
-                                What are your safeguarding responsibilities and how can you manage them?
-                            </h3>
-                            <a href="#"
-                                class="inline-flex items-center gap-2 text-primary font-semibold text-base mt-4 hover:text-[#3d9140] transition-colors duration-300">
-                                <span>Readmore</span>
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- card 3 -->
-                    <div class="relative flex flex-col items-center">
-                        <!-- background image -->
-                        <div class="w-full h-[286px] overflow-hidden rounded-lg">
-                            <img class="w-full h-full object-cover rounded-lg hover:scale-105 transition-transform duration-500"
-                                src="./assets/images/image 20.png"
-                                alt="Revamping the Membership Model with Triathlon Australia" />
-                        </div>
-                        <!-- floating card overlay -->
-                        <div
-                            class="w-[88%] -mt-24 z-10 bg-bg-silver p-5 rounded-lg shadow-lg text-center flex flex-col items-center justify-between min-h-[168px]">
-                            <h3 class="text-lg md:text-xl font-semibold text-text-neutral-gray leading-snug">
-                                Revamping the Membership Model with Triathlon Australia
-                            </h3>
-                            <a href="#"
-                                class="inline-flex items-center gap-2 text-primary font-semibold text-base mt-4 hover:text-[#3d9140] transition-colors duration-300">
-                                <span>Readmore</span>
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                <div class="blog-cards-container grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 mb-10"></div>
             </div>
         </section>
 
@@ -616,27 +495,7 @@
         </div>
     </footer>
 
-    <script>
-        const mobileNavButton = document.querySelector(".mobile-nav-button");
-        const mobileNavMenu = document.querySelector(".mobile-nav-menu");
-
-        mobileNavButton.addEventListener("click", () => {
-            // check hidden class exist
-            if (mobileNavMenu.classList.contains("hidden")) {
-                mobileNavMenu.classList.remove("hidden");
-                mobileNavMenu.classList.add("flex");
-
-                mobileNavButton.innerHTML = '';
-                mobileNavButton.innerHTML = '<i class="fa-solid fa-xmark"></i>';
-            } else {
-                mobileNavMenu.classList.add("hidden");
-                mobileNavMenu.classList.remove("flex");
-
-                mobileNavButton.innerHTML = '';
-                mobileNavButton.innerHTML = '<i class="fa-solid fa-bars"></i>';
-            }
-        });
-    </script>
+    <script src="./script/index.js"></script>
 </body>
 
 </html>
