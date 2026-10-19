@@ -27,9 +27,18 @@
         /* Nexcent Primary */
         --color-primary: #4CAF4F;
 
+        /* text color */
+        --color-text-neutral: #4D4D4D;
+        --color-text-neutral-gray: #717171;
+
         /* Nexcent Section Background */
         --color-bg-silver: #F5F7FA;
-        }   
+        }
+
+        @utility btn-primary {
+            @apply cursor-pointer w-[91px] h-[40px] bg-primary rounded-md text-white hover:text-black transition-all duration-300;
+        }
+
     </style>
 
     <!-- custom internal css -->
@@ -40,10 +49,10 @@
     </style>
 </head>
 
-<body class="bg-slate-50">
+<body>
     <!-- header nav menu -->
     <header class="sticky top-0 z-50">
-        <nav class="w-full bg-silver lg:shadow-sm relative">
+        <nav class="w-full bg-bg-silver relative">
             <div class="max-w-screen-xl mx-auto px-4 xl:px-0">
                 <!-- navigation bar -->
                 <div class="flex items-center justify-between h-[84px]">
@@ -73,7 +82,7 @@
 
                     <!-- mobile navigations -->
                     <ul
-                        class="mobile-nav-menu hidden absolute z-10 bg-silver w-full top-full left-0 lg:hidden flex-col items-left gap-8 p-4 text-[16px]">
+                        class="mobile-nav-menu hidden absolute z-10 bg-bg-silver w-full top-full left-0 lg:hidden flex-col items-left gap-8 p-4 text-[16px]">
                         <li class="hover:text-primary transition-colors duration-300 cursor-pointer">
                             <a href="#home">Home</a>
                         </li>
@@ -93,8 +102,7 @@
                         <div class="flex lg:hidden items-center gap-6">
                             <button
                                 class="flex-1 cursor-pointer text-primary hover:text-black transition-all duration-300">Login</button>
-                            <button
-                                class="flex-1 cursor-pointer w-[91px] h-[40px] bg-primary rounded-md text-white hover:text-black transition-all duration-300">Sign
+                            <button class="flex-1 btn-primary">Sign
                                 Up</button>
                         </div>
                     </ul>
@@ -103,8 +111,7 @@
                     <div class="hidden lg:flex items-center gap-6">
                         <button
                             class="cursor-pointer text-primary hover:text-black transition-all duration-300">Login</button>
-                        <button
-                            class="cursor-pointer w-[91px] h-[40px] bg-primary rounded-md text-white hover:text-black transition-all duration-300">Sign
+                        <button class="btn-primary">Sign
                             Up</button>
                     </div>
 
@@ -116,6 +123,44 @@
             </div>
         </nav>
     </header>
+
+    <!-- webpage main contents -->
+    <main>
+        <!-- hero section design -->
+        <section id="hero-section" class="bg-bg-silver h-[800px] lg:h-[599px]">
+            <div class="max-w-screen-xl mx-auto h-full px-4 xl:px-0 flex items-center">
+                <!-- hero slider -->
+                <div class="w-full flex flex-col lg:flex-row gap-[50px] justify-between items-center">
+                    <!-- slider content -->
+                    <div class="flex flex-col gap-8 items-center lg:items-start">
+                        <h1 class="text-center lg:text-left text-5xl md:text-[64px] font-semibold leading-[76px]"> <span
+                                class="text-text-neutral">Lessons
+                                and
+                                insights</span> <br> <span class="text-primary">from 8 years</span></h1>
+                        <p class="text-text-neutral-gray text-center lg:text-left">Where to grow your business as a
+                            photographer:
+                            site or
+                            social
+                            media?</p>
+                        <button class="btn-primary">Register</button>
+                    </div>
+                    <!-- slider image -->
+                    <div>
+                        <img class="max-w-[391px] w-full" src="./assets/images/hero.png" alt="hero-image" />
+                    </div>
+                </div>
+            </div>
+            <!-- slider-pagination -->
+            <div class="w-full flex justify-center items-center gap-2 -mt-8">
+                <div class="cursor-pointer w-3 h-3 rounded-full bg-primary"></div>
+                <div class="cursor-pointer w-3 h-3 rounded-full bg-primary/40"></div>
+                <div class="cursor-pointer w-3 h-3 rounded-full bg-primary/40"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- footer section  -->
+    <footer></footer>
 
     <script>
         const mobileNavButton = document.querySelector(".mobile-nav-button");
