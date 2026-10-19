@@ -530,7 +530,91 @@
     </main>
 
     <!-- footer section  -->
-    <footer></footer>
+    <footer class="bg-[#263238] text-white py-14 md:py-16">
+        <div class="max-w-screen-xl mx-auto px-4 xl:px-0">
+            <div class="flex flex-col md:flex-row justify-between gap-12 lg:gap-8">
+                <!-- left column: logo, copyright, socials -->
+                <div class="flex flex-col justify-between max-w-[350px]">
+                    <div>
+                        <!-- footer logo with white text effect -->
+                        <a href="#" class="inline-flex items-center gap-2">
+                            <img class="h-7 w-auto [filter:brightness(0)_invert(1)]" src="./assets/images/Logo.png"
+                                alt="Nexcent" />
+                        </a>
+                        <div class="mt-8 text-sm text-[#F5F7FA]/70 space-y-2">
+                            <p>Copyright &copy; 2020 Nexcent ltd.</p>
+                            <p>All rights reserved</p>
+                        </div>
+                    </div>
+
+                    <!-- social media icons -->
+                    <div class="flex items-center gap-4 mt-8">
+                        <a href="#"
+                            class="w-8 h-8 rounded-full bg-[#37474F] hover:bg-primary transition-colors duration-300 flex items-center justify-center text-sm text-white">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#"
+                            class="w-8 h-8 rounded-full bg-[#37474F] hover:bg-primary transition-colors duration-300 flex items-center justify-center text-sm text-white">
+                            <i class="fa-solid fa-globe"></i>
+                        </a>
+                        <a href="#"
+                            class="w-8 h-8 rounded-full bg-[#37474F] hover:bg-primary transition-colors duration-300 flex items-center justify-center text-sm text-white">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+                        <a href="#"
+                            class="w-8 h-8 rounded-full bg-[#37474F] hover:bg-primary transition-colors duration-300 flex items-center justify-center text-sm text-white">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- right links and newsletter columns -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-8">
+                    <!-- Company column -->
+                    <div>
+                        <h4 class="text-xl font-semibold mb-6 text-white">Company</h4>
+                        <ul class="space-y-3 text-sm text-[#F5F7FA]/75">
+                            <li><a href="#" class="hover:text-primary transition-colors duration-300">About us</a></li>
+                            <li><a href="#" class="hover:text-primary transition-colors duration-300">Blog</a></li>
+                            <li><a href="#" class="hover:text-primary transition-colors duration-300">Contact us</a>
+                            </li>
+                            <li><a href="#" class="hover:text-primary transition-colors duration-300">Pricing</a></li>
+                            <li><a href="#" class="hover:text-primary transition-colors duration-300">Testimonials</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Support column -->
+                    <div>
+                        <h4 class="text-xl font-semibold mb-6 text-white">Support</h4>
+                        <ul class="space-y-3 text-sm text-[#F5F7FA]/75">
+                            <li><a href="#" class="hover:text-primary transition-colors duration-300">Help center</a>
+                            </li>
+                            <li><a href="#" class="hover:text-primary transition-colors duration-300">Terms of
+                                    service</a></li>
+                            <li><a href="#" class="hover:text-primary transition-colors duration-300">Legal</a></li>
+                            <li><a href="#" class="hover:text-primary transition-colors duration-300">Privacy policy</a>
+                            </li>
+                            <li><a href="#" class="hover:text-primary transition-colors duration-300">Status</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Stay up to date column -->
+                    <div class="">
+                        <h4 class="text-xl font-semibold mb-6 text-white">Stay up to date</h4>
+                        <div class="relative w-full md:max-w-[255px]">
+                            <input type="email" placeholder="Your email address"
+                                class="w-full bg-[#515B60] text-sm text-white placeholder-[#D9DBE1] rounded-lg px-4 py-2.5 pr-10 focus:outline-none focus:ring-1 focus:ring-primary" />
+                            <button type="submit"
+                                class="absolute right-3 top-1/2 -translate-y-1/2 text-white hover:text-primary transition-colors duration-300 cursor-pointer">
+                                <i class="fa-regular fa-paper-plane text-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script>
         const mobileNavButton = document.querySelector(".mobile-nav-button");
