@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furino Landing Page</title>
+
+    <!-- google font cdn -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap"
+        rel="stylesheet">
+
+    <!-- fontawesome cdn  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
+        integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- tailwindcss cdn  -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- custom tailwindcss color config for the project -->
+    <style type="text/tailwindcss">
+        @theme {
+        /* Nexcent Primary */
+        --color-primary: #B88E2F;
+
+        /* text color */
+        --color-text-neutral: #4D4D4D;
+        --color-text-neutral-gray: #717171;
+
+        /* Nexcent Section Background */
+        --color-bg-silver: #F5F7FA;
+        }
+
+        @utility btn-primary {
+            @apply cursor-pointer px-5 py-2 bg-primary rounded-md text-white hover:text-black transition-all duration-300;
+        }
+
+    </style>
+
+    <!-- custom internal css -->
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50">
+    <!-- header nav menu -->
+    <header class="sticky top-0 z-50">
+        <nav class="w-full bg-white relative">
+            <div class="max-w-screen-xl mx-auto px-4 xl:px-0">
+                <!-- navigation bar -->
+                <div class="flex items-center justify-between h-[84px]">
+                    <!-- logo -->
+                    <a href="#" class="cursor-pointer">
+                        <img class="" src="./assets/images/Logo.png" alt="logo">
+                    </a>
+
+                    <!-- desktop navigations -->
+                    <ul class="hidden lg:flex items-center gap-8 text-sm text-[16px]">
+                        <li class="hover:text-primary transition-colors duration-300 cursor-pointer">
+                            <a href="#home">Home</a>
+                        </li>
+                        <li class="hover:text-primary transition-colors duration-300 cursor-pointer">
+                            <a href="#services">Shop</a>
+                        </li>
+                        <li class="hover:text-primary transition-colors duration-300 cursor-pointer">
+                            <a href="#features">About</a>
+                        </li>
+                        <li class="hover:text-primary transition-colors duration-300 cursor-pointer">
+                            <a href="#products">Contact</a>
+                        </li>
+                    </ul>
+
+                    <!-- mobile navigations -->
+                    <ul
+                        class="mobile-nav-menu hidden absolute z-10 bg-bg-silver w-full top-full left-0 lg:hidden flex-col items-left gap-8 p-4 text-[16px]">
+                        <li class="hover:text-primary transition-colors duration-300 cursor-pointer">
+                            <a href="#home">Home</a>
+                        </li>
+                        <li class="hover:text-primary transition-colors duration-300 cursor-pointer">
+                            <a href="#services">Shop</a>
+                        </li>
+                        <li class="hover:text-primary transition-colors duration-300 cursor-pointer">
+                            <a href="#features">About</a>
+                        </li>
+                        <li class="hover:text-primary transition-colors duration-300 cursor-pointer">
+                            <a href="#products">Contact</a>
+                        </li>
+                        </li>
+
+                        <div class="flex lg:hidden justify-center items-center gap-6">
+                            <button>
+                                <img class="w-6 h-6" src="./assets/icons/mdi_account-alert-outline.png"
+                                    alt="account alert icon">
+                            </button>
+                            <button>
+                                <img class="w-6 h-6" src="./assets/icons/akar-icons_search.png" alt="search icon">
+                            </button>
+                            <button>
+                                <img class="w-6 h-6" src="./assets/icons/akar-icons_heart.png" alt="heart icon">
+                            </button>
+                            <button>
+                                <img class="w-6 h-6" src="./assets/icons/ant-design_shopping-cart-outlined.png"
+                                    alt="cart icon">
+                            </button>
+                        </div>
+                    </ul>
+
+
+                    <div class="hidden lg:flex items-center gap-6">
+                        <button>
+                            <img class="w-6 h-6" src="./assets/icons/mdi_account-alert-outline.png"
+                                alt="account alert icon">
+                        </button>
+                        <button>
+                            <img class="w-6 h-6" src="./assets/icons/akar-icons_search.png" alt="search icon">
+                        </button>
+                        <button>
+                            <img class="w-6 h-6" src="./assets/icons/akar-icons_heart.png" alt="heart icon">
+                        </button>
+                        <button>
+                            <img class="w-6 h-6" src="./assets/icons/ant-design_shopping-cart-outlined.png"
+                                alt="cart icon">
+                        </button>
+                    </div>
+
+                    <!-- mobile menu btn -->
+                    <button class="mobile-nav-button lg:hidden text-xl cursor-pointer">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- webpage main contents -->
+    <main></main>
+
+    <!-- footer section  -->
+    <footer class="bg-white border-t border-[#D9D9D9] pt-12 pb-9">
+        <div class="max-w-screen-xl mx-auto px-4 xl:px-0">
+            <!-- Footer Main Content -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-6 pb-12">
+                <!-- Brand Info -->
+                <div class="lg:col-span-4 flex flex-col justify-between">
+                    <div>
+                        <h2 class="text-2xl font-bold text-black tracking-tight mb-8">Funiro.</h2>
+                        <address class="not-italic text-[#9F9F9F] text-base leading-relaxed max-w-[285px]">
+                            400 University Drive Suite 200 Coral Gables,<br>
+                            FL 33134 USA
+                        </address>
+                    </div>
+                </div>
+
+                <!-- Links Column -->
+                <div class="lg:col-span-2">
+                    <h3 class="text-[#9F9F9F] font-medium text-base mb-8">Links</h3>
+                    <ul class="flex flex-col space-y-7 font-medium text-black text-base">
+                        <li><a href="#" class="hover:text-primary transition-colors">Home</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Shop</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">About</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Help Column -->
+                <div class="lg:col-span-2">
+                    <h3 class="text-[#9F9F9F] font-medium text-base mb-8">Help</h3>
+                    <ul class="flex flex-col space-y-7 font-medium text-black text-base">
+                        <li><a href="#" class="hover:text-primary transition-colors">Payment Options</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Returns</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Privacy Policies</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter Column -->
+                <div class="lg:col-span-4">
+                    <h3 class="text-[#9F9F9F] font-medium text-base mb-8">Newsletter</h3>
+                    <form class="flex flex-wrap sm:flex-nowrap items-center gap-4">
+                        <div class="w-full sm:w-auto flex-1">
+                            <input type="email" placeholder="Enter Your Email Address" required
+                                class="w-full text-sm text-black placeholder-[#9F9F9F] border-b border-black pb-1 focus:outline-none focus:border-primary transition-colors bg-transparent">
+                        </div>
+                        <button type="submit"
+                            class="text-sm font-semibold uppercase text-black border-b border-black pb-1 hover:text-primary hover:border-primary transition-colors tracking-wider whitespace-nowrap cursor-pointer">
+                            SUBSCRIBE
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Bottom Divider & Copyright -->
+            <div class="border-t border-[#D9D9D9] pt-8">
+                <p class="text-[#000000] text-base">2023 furino. All rights reverved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./script/index.js"></script>
+</body>
+
+</html>
