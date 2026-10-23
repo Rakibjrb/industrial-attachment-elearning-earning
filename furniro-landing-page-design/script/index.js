@@ -115,13 +115,15 @@ mobileNavButton.addEventListener("click", () => {
 });
 
 // show more products btn
-showMoreBtn.addEventListener("click", () => {
-    //remove previous products
-    productsContainer.innerHTML = '';
+if (showMoreBtn) {
+    showMoreBtn.addEventListener("click", () => {
+        //remove previous products
+        productsContainer.innerHTML = '';
 
-    // render all products
-    renderProducts(products, true);
+        // render all products
+        renderProducts(products, true);
 
-    // hide show more btn
-    showMoreBtn.style.display = "none";
-});
+        // hide show more btn
+        showMoreBtn.style.display = "none";
+    });
+}
