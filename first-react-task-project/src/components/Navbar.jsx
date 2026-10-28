@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { AtSign, Menu, X } from "lucide-react";
+import { FiAtSign, FiMenu, FiX } from "react-icons/fi";
 
 const navLinks = [
     { name: "Home", href: "#home" },
@@ -21,7 +21,7 @@ const Navbar = () => {
                     {/* Logo / Brand */}
                     <a href="#home" className="flex items-center gap-2.5 group">
                         <span className="w-8 h-8 rounded-full bg-gradient-to-tr from-amber-500 to-orange-400 flex items-center justify-center text-white shadow-sm shadow-orange-300/40">
-                            <AtSign size={18} strokeWidth={2.4} />
+                            <FiAtSign size={18} />
                         </span>
                         <span className="text-xl font-bold tracking-tight text-slate-800 group-hover:text-orange-500 transition-colors">
                             Rakibul.
@@ -69,7 +69,7 @@ const Navbar = () => {
                             className="p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-colors"
                             aria-label="Toggle menu"
                         >
-                            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                            {isMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
                         </button>
                     </div>
                 </div>
